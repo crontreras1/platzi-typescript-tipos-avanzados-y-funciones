@@ -18,7 +18,7 @@ const example = (input: unknown) => {
     return fail('not match')
 }
 
-console.log('Holi')
-console.log([1, 2, 3, 4])
-console.log(1,)
-console.log('Holi, despues del error')
+console.log(example('Holi'))
+console.log(example([1, 2, 3, 4]))
+console.log(example(1)) // Reporta error y se detiene.
+console.log(example('Holi, despues del error'))
