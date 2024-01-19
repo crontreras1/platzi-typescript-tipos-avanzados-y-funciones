@@ -28,5 +28,6 @@ findProducts({
     stock: 10,
     color: 'Blue',
     createdAt: new Date(),
-    isNew: true
+    isNew: true,
+    tags: ['1ro', '2do', '3ro']
 })
