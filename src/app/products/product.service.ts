@@ -1,11 +1,11 @@
 // Manipulación
 import {Product } from './product.model'
-import { CreateProductDto, UpdateProductDto } from './product.dto'
+import { CreateProductDto, UpdateProductDto, FindProductDto } from './product.dto'
 import { faker } from '@faker-js/faker'
 
 export const products: Product[] = []
 
-export const addProduct = (data: CreateProductDto): Product => {
+export const addProducts = (data: CreateProductDto): Product => {
     const newProduct = {
         ...data,
         id: faker.datatype.uuid(),
@@ -22,7 +22,7 @@ export const addProduct = (data: CreateProductDto): Product => {
     return newProduct
 }
  
-export const updateProduct = (id: string, changes: UpdateProductDto): Product => {
+export const updateProducts = (id: string, changes: UpdateProductDto): Product => {
     const index = products.findIndex( item => item.id === id)
     const prevData = products[index]
     products[index] = {
@@ -33,14 +33,14 @@ export const updateProduct = (id: string, changes: UpdateProductDto): Product =>
     return products[index]
 }
 
+export const findProducts = (dto: FindProductDto): Product[] => {   
+    return products
+}
+
 // export const deleteProduct = (id: string, changes: Product) => {
 
 // }
 
 // export const getProduct = (id: string, changes: Product) => {
-
-// }
-
-// export const searchProduct = (id: string, changes: Product) => {
 
 // }

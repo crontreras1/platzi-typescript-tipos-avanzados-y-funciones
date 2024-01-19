@@ -1,9 +1,9 @@
 // Ejecución
-import { faker } from '@faker-js/faker'
-import { addProduct, products, updateProduct } from './products/product.service'
+import { faker, tr } from '@faker-js/faker'
+import { addProducts, findProducts, products, updateProducts } from './products/product.service'
 
 for (let i = 0; i < 50; i++) {
-    addProduct({
+    addProducts({
         image: faker.image.imageUrl(),
         description: faker.commerce.productDescription(),
         title: faker.commerce.productName(),
@@ -19,7 +19,14 @@ for (let i = 0; i < 50; i++) {
 
 console.log(products)
 const product = products[0]
-updateProduct(product.id, {
+updateProducts(product.id, {
     title: 'New Product',
     stock: 80
+})
+
+findProducts({
+    stock: 10,
+    color: 'Blue',
+    createdAt: new Date(),
+    isNew: true
 })
